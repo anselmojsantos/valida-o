@@ -38,7 +38,7 @@ function getUrl(){
     let url = window.location.href;
     let urlSucess = document.querySelector('#url');
 
-    url = url.substring(0,22);
+    url = url.substring(0,42);
 
    urlSucess.value = url + urlSucess.value
 }
