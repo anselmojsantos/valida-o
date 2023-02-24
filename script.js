@@ -1,7 +1,7 @@
 const f_msg = document.querySelector('#f_msg');
-//const f_nome = document.querySelector('#f_nome');
-//const f_nota = document.querySelector('#f_nota');
+const f_txArea = document.querySelector('#f_descricao');
 const fields = document.querySelectorAll('[required]');
+
 
 for (let field of fields){
     field.addEventListener('invalid', customValidation);
@@ -12,12 +12,12 @@ function customValidation(event){
     event.preventDefault();
     let field = event.target;
     let error = verifyError(field);
-    console.log(field.name);
+    
     if(error){
          f_msg.innerHTML = field.validationMessage +' ('+ field.name +')';
          field.style.border = '2px solid red';
     }else{
-        field.style.border = '2px solid #130f0d';
+        field.style.border = '2px solid #7c7c7c';
         f_msg.innerHTML = '';
     }
 }
@@ -32,18 +32,13 @@ function verifyError(err){
     return foundError;
 }
 
-document.querySelector('form')
-.addEventListener('sbmit', event =>{
-    event.preventDefault();
-})
+getUrl();
 
+function getUrl(){
+    let url = window.location.href;
+    let urlSucess = document.querySelector('#url');
 
-/*
-document.querySelector('#btn_validar').addEventListener('click',(event) =>{
-    event.preventDefault();
-    let msg = null;
-    if(!f_nota.checkValidity()){
-        msg = f_nota.validationMessage;
-    }
-    f_msg.innerHTML = msg;
-});*/
+    url = url.substring(0,22);
+
+   urlSucess.value = url + urlSucess.value
+}

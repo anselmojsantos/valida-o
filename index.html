@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;1,200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Validation in js</title>
 </head>
 <body>
-    <form action="">
-        <label for="">Nome:</label>
-        <input id="f_nome" name="Nome" type="text" minlength="4" maxlength="8" required>
-        <label for="">Email:</label>
-        <input id="f_nota" name="Email" type="email" min="0" max="10" required> 
-        <button id = 'btn_validar'>Validar</button>
-        <p id="f_msg"></p>
-    </form>
+    <section class="cl-h">
+        <h1>Formulário de Validação e Envio!</h1>
+        <br>
+        <h3>Utilizano o javascript e <a href ="https://formsubmit.co/">FormSubmit</a> </h3>
+        <div class="borda"></div>
+    </section>
+        <form action="https://formsubmit.co/anselmo3.santos@gmail.com" method="POST">
+            <input id="url" type="hidden" name="_next" value="sucesso.html">
+            <label for="">Nome:</label>
+            <input id="f_nome" placeholder="Digite o seu nome..." name="Nome" type="text" minlength="4" maxlength="50" required>
+            <label for="">Email:</label>
+            <input id="f_nota" placeholder="Digite o seu mellhor email..." name="Email" type="email" required> 
+            <label for="">Assunto:</label>
+            <input id="f_assunto" placeholder="Título do assunto" name="Título" type="text" minlength="4" maxlength="20" required> 
+            <label for="">Descrição:</label>
+            <textarea id="f_descricao" placeholder="Descrição do assunto" name="Descrição" type="text" minlength="4" maxlength="200" required></textarea> 
+            <button id = 'btn_validar'>Enviar</button>
+            <p id="f_msg"></p>
+        </form>
     <script src="script.js"></script>
 </body>
 </html>
